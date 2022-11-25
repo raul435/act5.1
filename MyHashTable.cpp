@@ -26,3 +26,48 @@ int MyHashTable::getPos(string key){
   return abs(hashCode)%this->sizeA;
 }
 
+void MyHashTable::rehashing(){
+  this->temptabla=new list<int>[this->sizeA]
+  tempTabla = tabla;
+
+  tabla.clear();
+
+  sizeA = (sizeA * 2) + 1 ;
+
+  tabla.resize(sizeA);
+
+  for (int i = 0; i < tempTabla.size; i++) {
+    if (tempTabla[i] != NULL){
+      tabla.put(to_string(MyHashTable::getPos(to_string(tempTabla[i]))), tempTabla[i]);
+    }
+  }
+
+  tempTabla.clear();
+}
+
+void MyHashTable::put(string key,int value){
+  if (this->size >= .75*this->sizeA) {
+    MyHashTable::rehashing()
+  }
+  for(int i = 0;i == 1;){
+    if (tabla == NULL){
+      tabla [key] = value;
+      i = 1;
+    }
+    else{
+      key += 7;
+      if (key > sizeA){
+        key -= sizeA;
+      }
+    }
+  }
+
+}
+
+int get(string key){
+  return tabla[key];
+}
+
+void remove(string key){
+  tabla[key] = -1;
+}

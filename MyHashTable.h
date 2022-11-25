@@ -1,3 +1,4 @@
+#pragma once
 #ifndef MYHASHTABLE_H
 #define MYHASHTABLE_H
 
