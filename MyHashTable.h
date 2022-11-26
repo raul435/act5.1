@@ -6,6 +6,11 @@
 #include <string>
 
 using namespace std;
+
+struct nodo{
+  int dato;
+}nodo, pnodo = &nodo;
+
 class MyHashTable {
 private:
   list<int> *tabla;
